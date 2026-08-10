@@ -8,11 +8,20 @@ resource "aws_vpc" "block-vpc" {
 
   cidr_block           = each.value
 }
+
+
+###
+resource "aws_vpc" "block-vpc" {
+  for_each = toset(var.vpcs)
+
+  cidr_block           = each.value
+}
+
 ###*/
 
 ### main
 resource "aws_vpc" "block-vpc" {
-  for_each = toset(var.vpcs)
+  for_each = var.vpcs
 
   cidr_block           = each.value
 }
