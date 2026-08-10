@@ -17,4 +17,4 @@ phases:
       - cd project3-vpc-toset-10Aug26
       - terraform init
       - echo "Terraform APPLY Stage started"
-      - $D
+      - $A
